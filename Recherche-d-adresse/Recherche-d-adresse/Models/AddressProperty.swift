@@ -7,10 +7,6 @@
 
 import Foundation
 
-enum AddressPropertyType: String, Decodable {
-    case housenumber
-}
-
 struct AddressProperty: Decodable {
     let id: String
     let label: String
