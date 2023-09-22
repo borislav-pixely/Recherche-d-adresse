@@ -8,5 +8,5 @@
 import Foundation
 
 struct AddressSearchResponse: Decodable {
-    
+    let features: [AddressFeature]
 }
