@@ -8,7 +8,6 @@
 import Foundation
 
 enum API {
-    private static let baseURLString = Bundle.main.object(forInfoDictionaryKey: "BASE_URL") as! String
-    static let baseURLComponents = URLComponents(string: baseURLString)!
+    static let baseURLString = Bundle.main.object(forInfoDictionaryKey: "BASE_URL") as! String
     static let baseURL = URL(string: baseURLString)!
 }
