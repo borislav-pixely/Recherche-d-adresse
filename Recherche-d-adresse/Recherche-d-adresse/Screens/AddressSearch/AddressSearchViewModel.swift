@@ -6,18 +6,46 @@
 //
 
 import Foundation
+import Combine
 
 final class AddressSearchViewModel: ObservableObject {
     
+    @Published var query: String = ""
+    @Published private(set) var searchResults: [AddressProperty] = []
+    
+    private var cancellables = Set<AnyCancellable>()
     private let addressAPI: AddressAPI
     
     init(addressAPI: AddressAPI) {
         self.addressAPI = addressAPI
+        setupObservers()
     }
     
-    // MARK: - Public
+    // MARK: - Private
     
-    func search(for query: String) {
-        // Fetch addresses
+    private func setupObservers() {
+        $query
+            .debounce(for: 2, scheduler: RunLoop.main)
+            .sink { [weak self] _ in
+                self?.search()
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func search() {
+        Task {
+            let result = await addressAPI.getAddresses(usingQuery: query)
+
+            DispatchQueue.main.async { [weak self] in
+                switch result {
+                case .success(let response):
+                    self?.searchResults = response.features.map { $0.properties }
+                case .failure(let error):
+                    // TODO: Handle error
+                    print("Error: \(error.localizedDescription)")
+                    self?.searchResults.removeAll()
+                }
+            }
+        }
     }
 }
