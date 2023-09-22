@@ -25,7 +25,7 @@ final class AddressSearchViewModel: ObservableObject {
     
     private func setupObservers() {
         $query
-            .debounce(for: 2, scheduler: RunLoop.main)
+            .debounce(for: 1, scheduler: RunLoop.main)
             .sink { [weak self] _ in
                 self?.search()
             }
@@ -39,7 +39,9 @@ final class AddressSearchViewModel: ObservableObject {
             DispatchQueue.main.async { [weak self] in
                 switch result {
                 case .success(let response):
-                    self?.searchResults = response.features.map { $0.properties }
+                    self?.searchResults = response.features
+                        .map { $0.properties }
+                        .filter { $0.type == "housenumber" }
                 case .failure(let error):
                     // TODO: Handle error
                     print("Error: \(error.localizedDescription)")
