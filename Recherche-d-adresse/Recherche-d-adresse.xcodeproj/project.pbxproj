@@ -17,6 +17,9 @@
 		1E4BF1FA2ABDC748000AB652 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BF1F92ABDC748000AB652 /* AppConstants.swift */; };
 		1E4BF1FD2ABDC7E0000AB652 /* AddressAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BF1FC2ABDC7E0000AB652 /* AddressAPI.swift */; };
 		1E4BF2002ABDC827000AB652 /* AddressSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BF1FF2ABDC827000AB652 /* AddressSearchResponse.swift */; };
+		1E4BF2032ABDCFC7000AB652 /* AddressFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BF2022ABDCFC7000AB652 /* AddressFeature.swift */; };
+		1E4BF2052ABDCFCD000AB652 /* AddressGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BF2042ABDCFCD000AB652 /* AddressGeometry.swift */; };
+		1E4BF2072ABDCFD3000AB652 /* AddressProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BF2062ABDCFD3000AB652 /* AddressProperty.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		1E4BF1FB2ABDC76C000AB652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		1E4BF1FC2ABDC7E0000AB652 /* AddressAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAPI.swift; sourceTree = "<group>"; };
 		1E4BF1FF2ABDC827000AB652 /* AddressSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchResponse.swift; sourceTree = "<group>"; };
+		1E4BF2022ABDCFC7000AB652 /* AddressFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressFeature.swift; sourceTree = "<group>"; };
+		1E4BF2042ABDCFCD000AB652 /* AddressGeometry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressGeometry.swift; sourceTree = "<group>"; };
+		1E4BF2062ABDCFD3000AB652 /* AddressProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressProperty.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,9 @@
 			isa = PBXGroup;
 			children = (
 				1E4BF1FF2ABDC827000AB652 /* AddressSearchResponse.swift */,
+				1E4BF2022ABDCFC7000AB652 /* AddressFeature.swift */,
+				1E4BF2042ABDCFCD000AB652 /* AddressGeometry.swift */,
+				1E4BF2062ABDCFD3000AB652 /* AddressProperty.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,10 +215,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E4BF1FD2ABDC7E0000AB652 /* AddressAPI.swift in Sources */,
+				1E4BF2032ABDCFC7000AB652 /* AddressFeature.swift in Sources */,
 				1E4BF2002ABDC827000AB652 /* AddressSearchResponse.swift in Sources */,
 				1E40D0CF2ABDC1DE00A266FC /* Recherche_d_adresseApp.swift in Sources */,
+				1E4BF2052ABDCFCD000AB652 /* AddressGeometry.swift in Sources */,
 				1E4BF1FA2ABDC748000AB652 /* AppConstants.swift in Sources */,
 				1E4BF1F02ABDC4E1000AB652 /* AddressSearchView.swift in Sources */,
+				1E4BF2072ABDCFD3000AB652 /* AddressProperty.swift in Sources */,
 				1E4BF1F22ABDC4EB000AB652 /* AddressSearchViewModel.swift in Sources */,
 				1E4BF1F52ABDC536000AB652 /* ManagerAPI.swift in Sources */,
 				1E4BF1F72ABDC6EF000AB652 /* BaseAPI.swift in Sources */,
@@ -271,7 +283,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -328,7 +340,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -346,7 +358,7 @@
 				BASE_URL = "https://api-adresse.data.gouv.fr/";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Recherche-d-adresse/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Recherche-d-adresse/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 554H8ZG4ZT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -354,8 +366,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,9 +375,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "borislavborisov.recherche-d-adresse";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+				TVOS_DEPLOYMENT_TARGET = 16.0;
 			};
 			name = Debug;
 		};
@@ -377,7 +393,7 @@
 				BASE_URL = "https://api-adresse.data.gouv.fr/";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Recherche-d-adresse/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Recherche-d-adresse/Resources/Preview Content\"";
 				DEVELOPMENT_TEAM = 554H8ZG4ZT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -385,8 +401,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -394,9 +410,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "borislavborisov.recherche-d-adresse";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
+				TVOS_DEPLOYMENT_TARGET = 16.0;
 			};
 			name = Release;
 		};
