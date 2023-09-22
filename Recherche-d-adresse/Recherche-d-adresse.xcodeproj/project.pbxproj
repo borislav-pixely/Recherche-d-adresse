@@ -8,17 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		1E40D0CF2ABDC1DE00A266FC /* Recherche_d_adresseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40D0CE2ABDC1DE00A266FC /* Recherche_d_adresseApp.swift */; };
-		1E40D0D12ABDC1DE00A266FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40D0D02ABDC1DE00A266FC /* ContentView.swift */; };
 		1E40D0D32ABDC1E000A266FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E40D0D22ABDC1E000A266FC /* Assets.xcassets */; };
 		1E40D0D62ABDC1E000A266FC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E40D0D52ABDC1E000A266FC /* Preview Assets.xcassets */; };
+		1E4BF1F02ABDC4E1000AB652 /* AddressSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BF1EF2ABDC4E1000AB652 /* AddressSearchView.swift */; };
+		1E4BF1F22ABDC4EB000AB652 /* AddressSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BF1F12ABDC4EB000AB652 /* AddressSearchViewModel.swift */; };
+		1E4BF1F52ABDC536000AB652 /* ManagerAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BF1F42ABDC536000AB652 /* ManagerAPI.swift */; };
+		1E4BF1F72ABDC6EF000AB652 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BF1F62ABDC6EF000AB652 /* BaseAPI.swift */; };
+		1E4BF1FA2ABDC748000AB652 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BF1F92ABDC748000AB652 /* AppConstants.swift */; };
+		1E4BF1FD2ABDC7E0000AB652 /* AddressAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BF1FC2ABDC7E0000AB652 /* AddressAPI.swift */; };
+		1E4BF2002ABDC827000AB652 /* AddressSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E4BF1FF2ABDC827000AB652 /* AddressSearchResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1E40D0CB2ABDC1DE00A266FC /* Recherche-d-adresse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recherche-d-adresse.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E40D0CE2ABDC1DE00A266FC /* Recherche_d_adresseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recherche_d_adresseApp.swift; sourceTree = "<group>"; };
-		1E40D0D02ABDC1DE00A266FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1E40D0D22ABDC1E000A266FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E40D0D52ABDC1E000A266FC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1E4BF1EF2ABDC4E1000AB652 /* AddressSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchView.swift; sourceTree = "<group>"; };
+		1E4BF1F12ABDC4EB000AB652 /* AddressSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchViewModel.swift; sourceTree = "<group>"; };
+		1E4BF1F42ABDC536000AB652 /* ManagerAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerAPI.swift; sourceTree = "<group>"; };
+		1E4BF1F62ABDC6EF000AB652 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		1E4BF1F92ABDC748000AB652 /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		1E4BF1FB2ABDC76C000AB652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		1E4BF1FC2ABDC7E0000AB652 /* AddressAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressAPI.swift; sourceTree = "<group>"; };
+		1E4BF1FF2ABDC827000AB652 /* AddressSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressSearchResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +64,13 @@
 		1E40D0CD2ABDC1DE00A266FC /* Recherche-d-adresse */ = {
 			isa = PBXGroup;
 			children = (
+				1E4BF1FB2ABDC76C000AB652 /* Info.plist */,
 				1E40D0CE2ABDC1DE00A266FC /* Recherche_d_adresseApp.swift */,
-				1E40D0D02ABDC1DE00A266FC /* ContentView.swift */,
-				1E40D0D22ABDC1E000A266FC /* Assets.xcassets */,
-				1E40D0D42ABDC1E000A266FC /* Preview Content */,
+				1E4BF1F82ABDC73F000AB652 /* Constants */,
+				1E4BF1EC2ABDC4C2000AB652 /* API */,
+				1E4BF1FE2ABDC81A000AB652 /* Models */,
+				1E4BF1ED2ABDC4CF000AB652 /* Screens */,
+				1E4BF1F32ABDC50F000AB652 /* Resources */,
 			);
 			path = "Recherche-d-adresse";
 			sourceTree = "<group>";
@@ -65,6 +81,58 @@
 				1E40D0D52ABDC1E000A266FC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1E4BF1EC2ABDC4C2000AB652 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				1E4BF1F42ABDC536000AB652 /* ManagerAPI.swift */,
+				1E4BF1F62ABDC6EF000AB652 /* BaseAPI.swift */,
+				1E4BF1FC2ABDC7E0000AB652 /* AddressAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		1E4BF1ED2ABDC4CF000AB652 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1E4BF1EE2ABDC4D6000AB652 /* AddressSearch */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1E4BF1EE2ABDC4D6000AB652 /* AddressSearch */ = {
+			isa = PBXGroup;
+			children = (
+				1E4BF1EF2ABDC4E1000AB652 /* AddressSearchView.swift */,
+				1E4BF1F12ABDC4EB000AB652 /* AddressSearchViewModel.swift */,
+			);
+			path = AddressSearch;
+			sourceTree = "<group>";
+		};
+		1E4BF1F32ABDC50F000AB652 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1E40D0D22ABDC1E000A266FC /* Assets.xcassets */,
+				1E40D0D42ABDC1E000A266FC /* Preview Content */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1E4BF1F82ABDC73F000AB652 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				1E4BF1F92ABDC748000AB652 /* AppConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		1E4BF1FE2ABDC81A000AB652 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1E4BF1FF2ABDC827000AB652 /* AddressSearchResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +205,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E40D0D12ABDC1DE00A266FC /* ContentView.swift in Sources */,
+				1E4BF1FD2ABDC7E0000AB652 /* AddressAPI.swift in Sources */,
+				1E4BF2002ABDC827000AB652 /* AddressSearchResponse.swift in Sources */,
 				1E40D0CF2ABDC1DE00A266FC /* Recherche_d_adresseApp.swift in Sources */,
+				1E4BF1FA2ABDC748000AB652 /* AppConstants.swift in Sources */,
+				1E4BF1F02ABDC4E1000AB652 /* AddressSearchView.swift in Sources */,
+				1E4BF1F22ABDC4EB000AB652 /* AddressSearchViewModel.swift in Sources */,
+				1E4BF1F52ABDC536000AB652 /* ManagerAPI.swift in Sources */,
+				1E4BF1F72ABDC6EF000AB652 /* BaseAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,12 +343,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "https://api-adresse.data.gouv.fr/";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Recherche-d-adresse/Preview Content\"";
 				DEVELOPMENT_TEAM = 554H8ZG4ZT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Recherche-d-adresse/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -285,7 +361,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "borislavborisov.Recherche-d-adresse";
+				PRODUCT_BUNDLE_IDENTIFIER = "borislavborisov.recherche-d-adresse";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -298,12 +374,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "https://api-adresse.data.gouv.fr/";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Recherche-d-adresse/Preview Content\"";
 				DEVELOPMENT_TEAM = 554H8ZG4ZT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Recherche-d-adresse/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -314,7 +392,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "borislavborisov.Recherche-d-adresse";
+				PRODUCT_BUNDLE_IDENTIFIER = "borislavborisov.recherche-d-adresse";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
