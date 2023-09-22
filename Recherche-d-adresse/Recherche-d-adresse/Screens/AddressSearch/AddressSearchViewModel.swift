@@ -7,19 +7,38 @@
 
 import Foundation
 import Combine
+import CoreLocation
 
 final class AddressSearchViewModel: ObservableObject {
     
     @Published var query: String = ""
-    @Published private(set) var searchResults: [AddressProperty] = []
+    @Published private var results: [AddressFeature] = []
     @Published private(set) var isLoading = false
     
+    private var previousQuery: String = ""
     private var cancellables = Set<AnyCancellable>()
     private let addressAPI: AddressAPI
+    
+    var searchResults: [AddressProperty] {
+        results
+            .map { $0.property }
+            .filter { $0.type == .housenumber }
+    }
     
     init(addressAPI: AddressAPI) {
         self.addressAPI = addressAPI
         setupObservers()
+    }
+    
+    // MARK: - Public
+    
+    func getCoordinates(for property: AddressProperty) -> CLLocationCoordinate2D? {
+        guard let coordinates = results.first(where: { $0.property.id == property.id })?.geometry.coordinates,
+              coordinates.count == 2 else {
+            return nil
+        }
+        
+        return CLLocationCoordinate2D(latitude: coordinates[1], longitude: coordinates[0])
     }
     
     // MARK: - Private
@@ -28,8 +47,9 @@ final class AddressSearchViewModel: ObservableObject {
         $query
             .debounce(for: 0.3, scheduler: RunLoop.main)
             .sink { [weak self] _ in
-                guard let self, !self.query.isEmpty else { return }
+                guard let self, !self.query.isEmpty, previousQuery != query else { return }
                 self.isLoading = true
+                self.previousQuery = query
                 self.search()
             }
             .store(in: &cancellables)
@@ -42,13 +62,11 @@ final class AddressSearchViewModel: ObservableObject {
             DispatchQueue.main.async { [weak self] in
                 switch result {
                 case .success(let response):
-                    self?.searchResults = response.features
-                        .map { $0.properties }
-                        .filter { $0.type == "housenumber" }
+                    self?.results = response.features
                 case .failure(let error):
                     // TODO: Handle error
                     print("Error: \(error.localizedDescription)")
-                    self?.searchResults.removeAll()
+                    self?.results.removeAll()
                 }
                 
                 self?.isLoading = false

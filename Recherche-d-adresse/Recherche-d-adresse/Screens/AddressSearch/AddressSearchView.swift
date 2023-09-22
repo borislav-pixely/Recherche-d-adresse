@@ -11,11 +11,19 @@ import MapKit
 struct AddressSearchView: View {
 
     @StateObject var viewModel: AddressSearchViewModel
-
+    @FocusState private var isTextFieldFocused: Bool
+    
     var body: some View {
-        VStack {
-            searchField
-            searchResults
+        NavigationView {
+            VStack {
+                searchField
+                searchResults
+            }
+            .onChange(of: viewModel.isLoading) { isLoading in
+                if isLoading {
+                    isTextFieldFocused = false
+                }
+            }
         }
     }
     
@@ -27,6 +35,7 @@ struct AddressSearchView: View {
             .background(Color(.systemGray6))
             .cornerRadius(8)
             .padding(.horizontal)
+            .focused($isTextFieldFocused)
     }
     
     @ViewBuilder private var searchResults: some View {
@@ -38,8 +47,14 @@ struct AddressSearchView: View {
             }
             .padding(.top, 10)
         } else {
-            List(viewModel.searchResults, id: \.id) { result in
-                Text(result.label)
+            List(viewModel.searchResults, id: \.id) { property in
+                if let coordinates = viewModel.getCoordinates(for: property) {
+                    NavigationLink(destination: AddressDetailsView(coordinates: coordinates)) {
+                        Text(property.label)
+                    }
+                } else {
+                    Text(property.label)
+                }
             }
         }
     }

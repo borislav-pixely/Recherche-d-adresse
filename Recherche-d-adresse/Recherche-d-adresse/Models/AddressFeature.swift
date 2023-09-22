@@ -8,6 +8,12 @@
 import Foundation
 
 struct AddressFeature: Decodable {
+    
+    enum CodingKeys: String, CodingKey {
+        case geometry
+        case property = "properties"
+    }
+    
     let geometry: AddressGeometry
-    let properties: AddressProperty
+    let property: AddressProperty
 }
