@@ -16,7 +16,7 @@ class BaseAPI {
     }
 
     func urlRequest(withPath path: String, queryItems: [URLQueryItem], method: HTTPMethod) -> URLRequest {
-        var components = API.baseURLComponents
+        var components = URLComponents(string: API.baseURLString.appending(path))!
         components.queryItems = queryItems
         
         guard let url = components.url else {

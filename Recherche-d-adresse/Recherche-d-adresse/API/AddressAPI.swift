@@ -17,10 +17,9 @@ final class AddressAPI: BaseAPI {
 
     func getAddresses(usingQuery query: String) async -> Result<AddressSearchResponse, Error> {
         let searchQuery = URLQueryItem(name: "q", value: query)
-        let typeQuery = URLQueryItem(name: "type", value: "housenum")
+        let typeQuery = URLQueryItem(name: "type", value: "housenumber")
         
-        let request = urlRequest(withPath: "search", queryItems: [searchQuery, typeQuery], method: .get)
-        
+        let request = urlRequest(withPath: "search/", queryItems: [searchQuery, typeQuery], method: .get)
         return await managerAPI.run(request: request)
     }
 }
