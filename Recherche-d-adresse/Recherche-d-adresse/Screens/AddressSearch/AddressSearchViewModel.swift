@@ -12,6 +12,7 @@ final class AddressSearchViewModel: ObservableObject {
     
     @Published var query: String = ""
     @Published private(set) var searchResults: [AddressProperty] = []
+    @Published private(set) var isLoading = false
     
     private var cancellables = Set<AnyCancellable>()
     private let addressAPI: AddressAPI
@@ -25,9 +26,11 @@ final class AddressSearchViewModel: ObservableObject {
     
     private func setupObservers() {
         $query
-            .debounce(for: 1, scheduler: RunLoop.main)
+            .debounce(for: 0.3, scheduler: RunLoop.main)
             .sink { [weak self] _ in
-                self?.search()
+                guard let self, !self.query.isEmpty else { return }
+                self.isLoading = true
+                self.search()
             }
             .store(in: &cancellables)
     }
@@ -47,6 +50,8 @@ final class AddressSearchViewModel: ObservableObject {
                     print("Error: \(error.localizedDescription)")
                     self?.searchResults.removeAll()
                 }
+                
+                self?.isLoading = false
             }
         }
     }

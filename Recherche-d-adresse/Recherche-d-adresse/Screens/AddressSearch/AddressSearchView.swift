@@ -29,9 +29,18 @@ struct AddressSearchView: View {
             .padding(.horizontal)
     }
     
-    private var searchResults: some View {
-        List(viewModel.searchResults, id: \.id) { result in
-            Text(result.label)
+    @ViewBuilder private var searchResults: some View {
+        if viewModel.isLoading {
+            VStack {
+                Text("Searching...")
+                ProgressView()
+                Spacer()
+            }
+            .padding(.top, 10)
+        } else {
+            List(viewModel.searchResults, id: \.id) { result in
+                Text(result.label)
+            }
         }
     }
 }
